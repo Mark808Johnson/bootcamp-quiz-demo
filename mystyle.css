@@ -1,5 +1,21 @@
+* {
+  background-color: lightyellow;
+}
+
+
+.body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+  color: blue;
+}  
+
 .content {
     max-width: 500px;
     margin: auto;
   }
 
+  .container{
+    padding: 15px;
+    background-color: lightblue;
+    color: maroon;
+  }
