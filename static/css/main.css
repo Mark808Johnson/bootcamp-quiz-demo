@@ -1,0 +1,21 @@
+body {  
+  margin: 0;
+  font-family: Calibri, Helvetica, sans-serif;  
+}  
+
+td, th, tr {
+  border: 1px solid rgb(147, 111, 213);
+  border-top-width: 1px;
+  border-top-style: solid; /* double, dashed, dotted... */
+  border-top-color: #ccc;
+}
+
+.content {
+    margin: auto;
+  }
+
+.container{
+    padding: 15px;
+    background-color: lightblue;
+    color: maroon;
+  }

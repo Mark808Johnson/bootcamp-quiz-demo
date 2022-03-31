@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Mark's Quiz!</title>
+
+{% endblock %}
+
+{% block body %}
+
+<h1>Welcome to Mark's astoundingly terrific quiz!</h1><br>
+
+<h2>Here are your 5 questions:</h2>
+
+<div>
+    <ol>
+        <li>QUESTION 1</li>
+        <li>QUESTION 2</li>
+        <li>QUESTION 3</li>
+        <li>QUESTION 4</li>
+        <li>QUESTION 5</li>
+    </ol>
+<div>
+<div>
+    <input type="name" placeholder="Please enter name" name="name" required><br><br>
+    <form action="results.html">
+        <input type="submit" value="Take me to my results!" />
+    </form>
+</div>
+
+{% endblock %}

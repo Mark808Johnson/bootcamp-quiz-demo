@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+ 
+{% block head %}
+<Title>Login to test</Title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Welcome to Mark's quirky quiz!</h1>
+</div>
+<div id="login">
+    <form class="container" action="quiz.html">
+        <input type="text" name="" id="username" placeholder="Please enter username" required><br><br>
+        <input type="text" name="" id="password" placeholder="Please enter password" required><br><br>
+        <input type="submit" onclick="login()" value="Login and go to Quiz" name="submit"/><br>
+        <label id-="message"></label>    
+    </form>
+</div> 
+<div>
+    <a href="leaderboard.html" class="container">Current Leaderboard</a> 
+</div>
+
+{% endblock %}

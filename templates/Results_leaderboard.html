@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+ 
+{% block head %}
+<Title>Results and leaderboard</Title>
+{% endblock %}
+
+{% block body %}
+
+
+<h1>You scored {}/5</h1>
+<p>Low score (1/5-2/5)<br>
+    <img src="/gifs/low score.gif" alt="Homer seeking shelter from the world"/>
+</p>
+<p>Medium score (3/5)<br>
+    <img src="/gifs/middling score.gif" alt="Larry doing his thing"/><br>
+</p>
+<p>High score (4/5-5/5)<br>
+    <img src="/gifs/high score.gif" width = "500" alt="Dr Bean has delivered the goods"/><br>
+    </p>
+
+<h2>Current leaderboard</h2>
+<Table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+<Table>
+
+{% endblock %}
