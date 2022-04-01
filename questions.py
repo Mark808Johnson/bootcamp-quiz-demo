@@ -1,6 +1,7 @@
+
 import random
 
-def random_questions():
+def random_questions(num):
     quiz_questions = [
         {
             "question": "In which continent are Chile, Argentina and Brazil?",
@@ -30,5 +31,4 @@ def random_questions():
         }
     ]
     random.shuffle(quiz_questions)
-    number_questions = 3
-    return quiz_questions[0:number_questions]
+    return quiz_questions[0:num]

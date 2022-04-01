@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from questions import random_questions 
@@ -20,14 +20,27 @@ app = Flask(__name__)
 #     def __repr__(self):
 #         return '<Task %r>' % self.id
 
-@app.route("/")
-def quiz():
-    random_selection = random_questions()
-    for item in random_selection:
-    return render_template("index.html")    
-        
-@app.route("/results", methods=["POST"]
+num_questions = 5
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        password = request.form.get("password")
+        if password == "bootcamp":
+             return render_template("quiz.html")     
+        else:
+            return render_template("login.html")
+    else:
+        return render_template("login.html")
+
+@app.route("/quiz")
+def quiz():
+    random_selection = random_questions(num_questions)
+    return render_template("quiz.html", data=random_selection, num=num_questions)    
+
+@app.route("/results", methods=["GET", "POST"])
+def quiz_results():
+    return render_template("results.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
