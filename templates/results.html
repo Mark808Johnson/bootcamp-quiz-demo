@@ -6,27 +6,56 @@
 
 {% block body %}
 
+<div class="container">
+<h1>You scored {{correct_answers}}/{{num_questions}}</h1>
 
-<h1>You scored {}/5</h1>
+{% if correct_answers/num_questions < 0.34 %}
+<p><img src="{{url_for('static', filename='low_score.gif')}}"/>
+</p>
 
-<p>Low score (1/5-2/5)<br>
-    <img src="{{url_for('static', filename='low_score.gif')}}"/>
+{% elif 0.34 < correct_answers/num_questions < 0.67 %}
+
+<p><img src="{{url_for('static', filename='middling_score.gif')}}"/>
 </p>
-<p>Medium score (3/5)<br>
-    <img src="{{url_for('static', filename='middling_score.gif')}}"/>
+
+{% else %}
+
+<p><img src="{{url_for('static', filename='high_score.gif')}}"/>
 </p>
-<p>High score (4/5-5/5)<br>
-    <img src="{{url_for('static', filename='high_score.gif')}}"/>
+
+{% endif %}
 
 <h2>Current leaderboard</h2>
 <Table>
     <thead>
         <tr>
+            <th>Rank</th>
             <th>Name</th>
             <th>Score</th>
             <th>Date</th>
         </tr>
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+        </tr>
+
     </thead>
-<Table>
+<Table><br>
+
+<a href="{{url_for('quiz')}}">
+    <input type="submit" value="Try quiz again!"/>
+</form>
+</div>
 
 {% endblock %}

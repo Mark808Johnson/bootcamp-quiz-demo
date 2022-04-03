@@ -7,26 +7,24 @@
 {% endblock %}
 
 {% block body %}
-<div>
-    
+<div class="container">
+  
 <h1>Welcome to Mark's astoundingly terrific quiz!</h1>
-
-<h2>Here are your {{num}} questions:</h2>
-
+<h2>Here are your {{num_questions}} questions:</h2>
 </div>
 
 <div>
-<form action="/results" method="POST">
+<form action="/results" class="container" method="POST">
     <ol>
-        {% for item in data %}
+        {% for item in selected_quiz %}
             <li>{{item.question}}</li><br>
             {% for option in item.options %}
-            <input type="radio" id="{{option}}" name = "option" value="{{option}}">{{option}}<br><br>
+            <input type="radio" id="{{option}}" name = "{{item.question}}" value="{{option}}">{{option}}<br><br>
             {% endfor %}
         {% endfor %}
     </ol>
 
-    <input type="name" placeholder="Please enter name" name="name" required><br><br>
+    <input type="name" id="name" name="name" placeholder="Please enter name"  required><br><br>
     
     <input type="submit" value="Take me to my results!"/>
 </form>

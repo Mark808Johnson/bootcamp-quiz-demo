@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from questions import random_questions 
+from questions import selected_quiz, num_questions
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI']  = 'sqlite:///test.db'
@@ -20,27 +20,30 @@ app = Flask(__name__)
 #     def __repr__(self):
 #         return '<Task %r>' % self.id
 
-num_questions = 5
 
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        password = request.form.get("password")
-        if password == "bootcamp":
-             return render_template("quiz.html")     
-        else:
-            return render_template("login.html")
-    else:
-        return render_template("login.html")
+# @app.route("/login", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         password = request.form.get("password")
+#         if password == "bootcamp":
+#              return render_template("quiz.html")     
+#         else:
+#             return render_template("login.html")
+#     else:
+#         return render_template("login.html")
 
-@app.route("/quiz")
+@app.route("/", methods=["GET"])
 def quiz():
-    random_selection = random_questions(num_questions)
-    return render_template("quiz.html", data=random_selection, num=num_questions)    
+    return render_template("quiz.html", selected_quiz=selected_quiz, num_questions=num_questions)    
 
 @app.route("/results", methods=["GET", "POST"])
 def quiz_results():
-    return render_template("results.html")
+    correct_answers = 1
+    if request.method == "POST":
+        pass
+        # for i in selected_quiz:
+        #     answer = request.form[i]["item"]["question"]
+    return render_template("results.html",correct_answers=correct_answers, num_questions=num_questions)
 
 if __name__ == "__main__":
     app.run(debug=True)

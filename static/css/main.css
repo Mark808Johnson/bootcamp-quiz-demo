@@ -1,9 +1,11 @@
 body {  
-  margin: 0;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 700px;
   font-family: Calibri, Helvetica, sans-serif;  
 }  
 
-td, th, tr {
+table, td, th, tr {
   border: 1px solid rgb(147, 111, 213);
   border-top-width: 1px;
   border-top-style: solid; /* double, dashed, dotted... */
@@ -14,8 +16,12 @@ td, th, tr {
     margin: auto;
   }
 
-.container{
-    padding: 15px;
-    background-color: lightblue;
-    color: maroon;
-  }
+.container{  
+  text-align: center;  
+  width: 300px;  
+  height: 200px;  
+  }  
+
+  #btn{  
+  font-size: 25px;  
+  }  

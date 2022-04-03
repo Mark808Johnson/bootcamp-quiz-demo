@@ -1,8 +1,8 @@
 
 import random
 
-def random_questions(num):
-    quiz_questions = [
+num_questions = 3
+quiz_data = [
         {
             "question": "In which continent are Chile, Argentina and Brazil?",
             "options": ["North America", "South America", "Europe"],
@@ -30,5 +30,13 @@ def random_questions(num):
             "answer": "Barcelona"
         }
     ]
-    random.shuffle(quiz_questions)
-    return quiz_questions[0:num]
+    
+def gen_quiz_data(data, num):
+    """
+    Produces random sample of data to be used in quiz
+    """
+    random.shuffle(data)
+    selected_data = data[0:num]
+    return selected_data
+
+selected_quiz = gen_quiz_data(quiz_data, num_questions)
