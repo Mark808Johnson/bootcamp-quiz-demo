@@ -1,19 +1,33 @@
 body {  
+  background-color: lightblue;
+  background-size: cover;
+  height: 100vh;
+  padding:0;
+  margin:0 auto;
   text-align: center;
-  margin: 0 auto;
   max-width: 700px;
   font-family: Calibri, Helvetica, sans-serif;  
 }  
 
-#yourElement{
-  margin: 0 auto;
-} 
-
-img.animated-gif{
-  width: 350px;
-  height: auto;
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
 }
 
+#highscore {
+  background-image: url(/static/high_score.gif);
+  background-repeat: repeat;
+}
+
+#middlingscore {
+  background-image: url(/static/middling_score.gif);
+  background-repeat: repeat;
+}
+
+#lowscore {
+  background-image: url(/static/low_score.gif);
+  background-repeat: repeat;
+}
 
 table, td, th, tr {
   border: 1px solid rgb(147, 111, 213);
@@ -21,17 +35,3 @@ table, td, th, tr {
   border-top-style: solid; /* double, dashed, dotted... */
   border-top-color: #ccc;
 }
-
-.content {
-    margin: auto;
-  }
-
-.container{  
-  text-align: center;  
-  width: 300px;  
-  height: 200px;  
-  }  
-
-  #btn{  
-  font-size: 25px;  
-  }  
