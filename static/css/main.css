@@ -5,6 +5,16 @@ body {
   font-family: Calibri, Helvetica, sans-serif;  
 }  
 
+#yourElement{
+  margin: 0 auto;
+} 
+
+img.animated-gif{
+  width: 350px;
+  height: auto;
+}
+
+
 table, td, th, tr {
   border: 1px solid rgb(147, 111, 213);
   border-top-width: 1px;

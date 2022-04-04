@@ -10,17 +10,17 @@
 <h1>You scored {{correct_answers}}/{{num_questions}}</h1>
 
 {% if correct_answers/num_questions < 0.34 %}
-<p><img src="{{url_for('static', filename='low_score.gif')}}"/>
+<p><img class="animated-gif" src="{{url_for('static', filename='low_score.gif')}}"/>
 </p>
 
 {% elif 0.34 < correct_answers/num_questions < 0.67 %}
 
-<p><img src="{{url_for('static', filename='middling_score.gif')}}"/>
+<p><img class="animated-gif" src="{{url_for('static', filename='middling_score.gif')}}"/>
 </p>
 
 {% else %}
 
-<p><img src="{{url_for('static', filename='high_score.gif')}}"/>
+<p><img class="animated-gif" src="{{url_for('static', filename='high_score.gif')}}"/>
 </p>
 
 {% endif %}

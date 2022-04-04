@@ -19,7 +19,7 @@
         {% for item in selected_quiz %}
             <li>{{item.question}}</li><br>
             {% for option in item.options %}
-            <input type="radio" id="{{option}}" name = "{{item.question}}" value="{{option}}">{{option}}<br><br>
+            <input type="radio" id="{{option}}" name = "{{item.q_id}}" value="{{option}}">{{option}}<br><br>
             {% endfor %}
         {% endfor %}
     </ol>

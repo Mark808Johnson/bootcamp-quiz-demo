@@ -38,15 +38,19 @@ def quiz():
 
 @app.route("/results", methods=["GET", "POST"])
 def quiz_results():
-    correct_answers = 1
+    correct_answers = 0
     if request.method == "POST":
-        pass
-        # for i in selected_quiz:
-        #     answer = request.form[i]["item"]["question"]
+        for item in selected_quiz:
+            answer = request.form.get(f"{item['q_id']}")
+            if answer == item["answer"]:
+                correct_answers += 1
+        
+    
+    
+    
+    
     return render_template("results.html",correct_answers=correct_answers, num_questions=num_questions)
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
 
