@@ -27,30 +27,24 @@
 
 <h2>Current leaderboard</h2>
 <Table class="center">
-    <thead>
-        <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Score</th>
-            <th>Date</th>
-        </tr>
-        <tr>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>5</td>
-        </tr>
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Date</th>
+    </tr>
+    
+    {% for leader in range(leaders|length) %}
 
-    </thead>
+        <tr>
+            <td>{{leader+1}}</td>
+            <td>{{leaders[leader].name}}</td>
+            <td>{{leaders[leader].score}}</td>
+            <td>{{leaders[leader].date.date()}}</td>
+        </tr>
+    
+    {% endfor %}
+
 <Table><br>
 
 <a href="{{url_for('quiz_results')}}">

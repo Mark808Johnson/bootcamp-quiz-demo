@@ -1,7 +1,7 @@
 
 import random
 
-num_questions = 3
+num_questions = 5
 quiz_data = [
         {
             "q_id": 1,
