@@ -7,12 +7,12 @@ from sqlalchemy import (Column, String, Integer, DateTime)
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'bootcamp'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://scxgcphq:4dxxCFEVio2WToybGrb37Az42bbDi5YW@hattie.db.elephantsql.com/scxgcphq'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://scxgcphq:4dxxCFEVio2WToybGrb37Az42bbDi5YW@hattie.db.elephantsql.com/scxgcphq'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class Leaderboard(db.Model):
+class leaderboard(db.Model):
     __tablename__ = 'leaderboard'
     id = Column(Integer, primary_key=True)
     name = Column(String(30), nullable=False)
@@ -20,7 +20,7 @@ class Leaderboard(db.Model):
     date = Column(DateTime, default=datetime.utcnow)
     
     def __repr__(self):
-        return "<Leaderboard(name='%s', score='%s', date='%s')>" % (self.name, self.score, self.datetime)
+        return "<leaderboard(name='%s', score='%s', date='%s')>" % (self.name, self.score, self.datetime)
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -46,10 +46,10 @@ def quiz_results():
             if answer == item["answer"]:
                 correct_answers += 1
         player_name = request.form["name"]
-        new_player = Leaderboard(name=player_name, score=correct_answers)
+        new_player = leaderboard(name=player_name, score=correct_answers)
         db.session.add(new_player)
         db.session.commit()
-        leaders = Leaderboard.query.order_by(Leaderboard.score.desc()).limit(5).all()
+        leaders = leaderboard.query.order_by(leaderboard.score.desc()).limit(5).all()
         return render_template("results.html",correct_answers=correct_answers, num_questions=num_questions, name=player_name, leaders=leaders)
         
 if __name__ == "__main__":
