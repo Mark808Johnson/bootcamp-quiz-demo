@@ -1,7 +1,7 @@
 
 import random
 
-num_questions = 5
+num_questions = 10
 quiz_data = [
         {
             "q_id": 1,
@@ -33,6 +33,36 @@ quiz_data = [
             "question": "In which city were the 1992 Summer Olympics held?",
             "options": ["Seoul", "Sydney", "Barcelona"],
             "answer": "Barcelona"
+        },
+        {
+            "q_id": 6,
+            "question": "What other country, besides the US, uses the US dollar as its official currency?",
+            "options": ["Ecuador", "Mexico", "Canada"],
+            "answer": "Ecuador"
+        },
+        {
+            "q_id": 7,
+            "question": "How many sides does a Dodecahedron have?",
+            "options": ["12", "24", "14"],
+            "answer": "12"
+        },
+        {
+            "q_id": 8,
+            "question": "The Statue of Liberty was a gift to the United States from which European country?",
+            "options": ["Belgium", "Germany", "France"],
+            "answer": "France"
+        },
+        {
+            "q_id": 9,
+            "question": "Which traditional Spanish dance originated in Andalusia and is recognised by UNESCO as a heritage of humanity?",
+            "options": ["Flamenco", "Sardana", "Paso Doble"],
+            "answer": "Flamenco"
+        },
+        {
+            "q_id": 10,
+            "question": "The human body is made up of approximately how much water?",
+            "options": ["50%", "60%", "70%"],
+            "answer": "60%"
         }
     ]
     
