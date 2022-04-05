@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, redirect, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -8,7 +7,6 @@ from sqlalchemy import (Column, String, Integer, DateTime)
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'bootcamp'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://scxgcphq:4dxxCFEVio2WToybGrb37Az42bbDi5YW@hattie.db.elephantsql.com/scxgcphq'
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

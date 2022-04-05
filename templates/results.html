@@ -9,11 +9,11 @@
 <div class="container">
 <h1>{{name}}, you scored {{correct_answers}}/{{num_questions}}</h1>
 
-{% if correct_answers/num_questions < 0.2 %}
+{% if correct_answers/num_questions <= 0.34 %}
 <p><img id="low_score" src="{{url_for('static', filename='low_score.gif')}}"/>
 </p>
 
-{% elif 0.2 < correct_answers/num_questions < 0.67 %}
+{% elif 0.34 < correct_answers/num_questions < 0.67 %}
 
 <p><img id="middling_score" src="{{url_for('static', filename='middling_score.gif')}}"/>
 </p>
