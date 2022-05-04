@@ -1,6 +1,6 @@
 # Mini quiz demo
 
-Created as project for Code Bootcamp Häme 2022 course.
+Mini-project created over a 2-3 days as part of Saranen's Code Bootcamp 2022, intended as a means to learn Flask/Jinja2/sqlalchemy.  
 
 # Description:
 
